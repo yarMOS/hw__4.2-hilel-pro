@@ -1,19 +1,18 @@
 'use strict';
 
-let num1Input = prompt('Enter 3 numbers');
+let number = prompt(`Введіть тризначне число:`);
 
-if (!num1Input?.trim() || num1Input === null){
-    alert('Дозволені лише 3-х значнi числа.');
-} else if (isNaN(num1Input)) {
-    alert('Дозволені лише 3-х значнi числа.');
-} else if (num1Input.trim() === "") {
-  alert('Ти ввів тільки пробіли або нічого не ввів.');
+if (number === null || number.length !== 3 || isNaN(number)) {
+    alert(`Це не коректне тризначне число.`);
 } else {
-    num1Input = +num1Input;
-    if ((num1Input >= 100 && num1Input <= 999) || (num1Input <= -100 && num1Input >= -999)) {
-        alert(`Ваше 3-х значне число: ${num1Input}`);
+    let a = number[0];
+    let b = number[1];
+    let c = number[2];
+    if (a === b && b === c) {
+        alert("Всі цифри однакові. Ваші числа: ${a} ${b} ${c}.");
+    } else if (a === b || a === c || b === c) {
+        alert(`Є однакові цифри. Ваші числа: ${a} ${b} ${c}.`);
     } else {
-        alert('Дозволені лише 3-х значнi числа.');
-        num1Input = 'Користувач не вказав кількість.';
+        alert(`Всі цифри різні. Ваші числа: ${a} ${b} ${c}.`);
     }
 }
