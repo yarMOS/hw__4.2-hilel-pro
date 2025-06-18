@@ -1,12 +1,12 @@
 'use strict';
 
-let input = prompt(`Введіть тризначне число:`);
+const input = prompt(`Введіть тризначне число:`);
 
 if (input === null ||
     isNaN(input) ||
     input.trim() === '' ||
     !Number.isInteger(+input) ||
-    +input <= 100 || +input >= 999) {
+    +input < 100 || +input > 999) {
     alert(`Це не коректне тризначне число.`);
 } else {
     const number = String(+input);
